@@ -1,0 +1,5 @@
+dac.c:31:6:MX_DAC_Init	16	static
+dac.c:64:6:HAL_DAC_MspInit	48	static
+dac.c:113:6:HAL_DAC_MspDeInit	16	static
+dac.c:141:6:HAL_DAC_ConvHalfCpltCallbackCh1	16	static
+dac.c:159:6:HAL_DAC_ConvCpltCallbackCh1	16	static
