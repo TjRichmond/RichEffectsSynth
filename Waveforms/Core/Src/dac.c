@@ -6,7 +6,7 @@
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2021 STMicroelectronics.
+  * <h2><center>&copy; Copyright (c) 2022 STMicroelectronics.
   * All rights reserved.</center></h2>
   *
   * This software component is licensed by ST under BSD 3-Clause license,
@@ -21,7 +21,7 @@
 #include "dac.h"
 
 /* USER CODE BEGIN 0 */
-
+#include  "wavetables.h"
 /* USER CODE END 0 */
 
 DAC_HandleTypeDef hdac;
@@ -143,15 +143,15 @@ void HAL_DAC_ConvHalfCpltCallbackCh1(DAC_HandleTypeDef *hdac) {
 	case 0:
 		inBufPtr = &Sine_LUT[0];
 		break;
-//	case 1:
-//		inBufPtr = &Tri_LUT[0];
-//		break;
-//	case 2:
-//		inBufPtr = &Saw_LUT[0];
-//		break;
-//	case 3:
-//		inBufPtr = &Sqr_LUT[0];
-//		break;
+	case 1:
+		inBufPtr = &Tri_LUT[0];
+		break;
+	case 2:
+		inBufPtr = &Saw_LUT[0];
+		break;
+	case 3:
+		inBufPtr = &Sqr_LUT[0];
+		break;
 	}
 	outBufPtr = &dac_val[NS];
 }
@@ -161,15 +161,15 @@ void HAL_DAC_ConvCpltCallbackCh1(DAC_HandleTypeDef *hdac) {
 	case 0:
 		inBufPtr = &Sine_LUT[0];
 		break;
-//	case 1:
-//		//inBufPtr = &Tri_LUT[0];
-//		break;
-//	case 2:
-//		//inBufPtr = &Saw_LUT[0];
-//		break;
-//	case 3:
-//		//inBufPtr = &Sqr_LUT[0];
-//		break;
+	case 1:
+		inBufPtr = &Tri_LUT[0];
+		break;
+	case 2:
+		inBufPtr = &Saw_LUT[0];
+		break;
+	case 3:
+		inBufPtr = &Sqr_LUT[0];
+		break;
 	}
 	outBufPtr = &dac_val[0];
 }

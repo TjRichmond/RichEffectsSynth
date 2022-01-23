@@ -33,6 +33,7 @@ extern "C" {
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include <stdbool.h>
+#include "lowpass_firstorder.h"
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
@@ -95,25 +96,34 @@ void Error_Handler(void);
 #define G_GPIO_Port GPIOB
 #define G_EXTI_IRQn EXTI9_5_IRQn
 /* USER CODE BEGIN Private defines */
+
 #define NS 512
 #define FULLBUFFERSIZE 1024
+
+#define INT16_TO_FLOAT (1.0f / 32768.0f)
 
 extern volatile uint32_t* outBufPtr;
 extern volatile uint32_t* inBufPtr;
 
 extern uint32_t dac_val[FULLBUFFERSIZE];
-extern uint32_t Sine_LUT[NS];
-//extern uint32_t Saw_LUT[NS];
-//extern uint32_t Tri_LUT[NS];
-//extern uint32_t Sqr_LUT[NS];
 
 extern bool keyPressFlag;
 extern uint8_t oscType;
 
-extern float waveAmp;
-extern uint16_t volume;
+extern volatile float volumeOut;
+extern volatile float freqCut;
 
-extern bool keyState[7];
+extern uint16_t volumeCtrl;
+extern uint16_t fc_Ctrl;
+
+extern uint32_t Sine_LUT[NS];
+extern uint32_t Tri_LUT[NS];
+extern uint32_t Saw_LUT[NS];
+extern uint32_t Sqr_LUT[NS];
+
+extern LowPass_FirstOrder lpFilt;
+
+
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus

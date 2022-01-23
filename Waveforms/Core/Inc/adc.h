@@ -6,7 +6,7 @@
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2021 STMicroelectronics.
+  * <h2><center>&copy; Copyright (c) 2022 STMicroelectronics.
   * All rights reserved.</center></h2>
   *
   * This software component is licensed by ST under BSD 3-Clause license,
@@ -32,12 +32,14 @@ extern "C" {
 /* USER CODE END Includes */
 
 extern ADC_HandleTypeDef hadc1;
+extern ADC_HandleTypeDef hadc2;
 
 /* USER CODE BEGIN Private defines */
 extern uint32_t AD_RES;
 /* USER CODE END Private defines */
 
 void MX_ADC1_Init(void);
+void MX_ADC2_Init(void);
 
 /* USER CODE BEGIN Prototypes */
 

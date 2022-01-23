@@ -6,7 +6,7 @@
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2021 STMicroelectronics.
+  * <h2><center>&copy; Copyright (c) 2022 STMicroelectronics.
   * All rights reserved.</center></h2>
   *
   * This software component is licensed by ST under BSD 3-Clause license,
@@ -114,23 +114,21 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
 	switch(GPIO_Pin){
 		case B1_Pin:
-//				if(oscType>=3){
-//					oscType = 0;
-//				}
-//				else
-//					oscType++;
+				if(oscType>=3){
+					oscType = 0;
+				}
+				else
+					oscType++;
 			break;
 
 		case A_Pin:
 			if(HAL_GPIO_ReadPin(GPIOB, A_Pin)) {
 				htim2.Instance->CR1 |= TIM_CR1_CEN;
 				htim2.Instance->ARR = 799;
-				//keyState[0] = false;
 				keyPressFlag = true;
 			}
 			else {
 				htim2.Instance->CR1 &= ~TIM_CR1_CEN;
-				//keyState[0] = false;
 				keyPressFlag = false;
 			}
 			break;
