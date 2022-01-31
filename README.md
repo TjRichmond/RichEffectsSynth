@@ -1,5 +1,5 @@
 # Rich Effects Digital Synthesizer
-Open Source Monophonic Sythnesizer Project Utilizing the STM32F4 Chipset
+Open Source Monophonic Sythnesizer Project Utilizing the STM32F446 Microcontroller
 
 ### Current Features
 - 4 Unique Waveforms | Sine | Saw | Triangle | Square
